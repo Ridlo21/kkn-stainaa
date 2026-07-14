@@ -47,4 +47,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the mahasiswa profile associated with the user.
+     */
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class);
+    }
+
+    /**
+     * Get the dosen profile associated with the user.
+     */
+    public function dosen()
+    {
+        return $this->hasOne(Dosen::class);
+    }
 }
